@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="Theme.CNXFlashCardsTheme" parent="android:Theme.Holo.Light">
+    <style name="Theme.CNXFlashCardsTheme" parent="android:Theme.Holo">
         <item name="actionBarStyle">@style/Widget.CNXFlashCardsTheme.ActionBar</item>
         <item name="android:actionBarStyle">@style/Widget.CNXFlashCardsTheme.ActionBar</item>
         <item name="android:textColor">@color/white</item>
@@ -11,6 +11,7 @@
         <item name="android:background">@color/actionbar_background</item>
         <item name="background">@color/actionbar_background</item>
         <item name="android:icon">@android:color/transparent</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/PopupMenuTextAppearance</item>
         
     </style>
     <style name="PopupMenuTextAppearance" parent="android:TextAppearance.Small">
