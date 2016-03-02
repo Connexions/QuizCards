@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">QuizCards</string>
-    <string name="enterTermHint">Enter a term...</string>
-    <string name="enterMeaningHint">Enter the meaning...</string>
-    <string name="enterNameHint">Enter a title...</string>
-    <string name="enterAuthorHint">Enter name(s)...</string>
-    <string name="enterSummaryHint">Enter a summary...</string>
+    <string name="enterTermHint">Enter a term&#8230;</string>
+    <string name="enterMeaningHint">Enter the meaning&#8230;</string>
+    <string name="enterNameHint">Enter a title&#8230;</string>
+    <string name="enterAuthorHint">Enter name(s)&#8230;</string>
+    <string name="enterSummaryHint">Enter a summary&#8230;</string>
     <string name="studyModeTitle">Study</string>
     <string name="selfTestModeTitle">Self Test</string>
     <string name="quizModeTitle">Quiz</string>
-    <string name="searchHint">Search OpenStax CNX...</string>
+    <string name="searchHint">Search OpenStax CNX&#8230;</string>
     <string name="search">Search</string>
-    <string name="helpText">Help</string>
     <string name="userCards">My Decks</string>
     <string name="help">Help</string>
     <string name="notGotHighScore">You didn\'t get a high score.</string>

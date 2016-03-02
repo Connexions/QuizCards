@@ -32,8 +32,6 @@ import android.app.Activity;
 public class MainActivity extends Activity {
 
     private Button searchButton;
-    private Button showCardsButton;
-    private Button viewHelpButton;
 
     private EditText searchInput;
 
@@ -48,9 +46,9 @@ public class MainActivity extends Activity {
         
         // Get UI elements
         searchButton = (Button) findViewById(R.id.searchButton);
-        showCardsButton = (Button) findViewById(R.id.showCardsButton);
+        Button showCardsButton = (Button) findViewById(R.id.showCardsButton);
         searchInput = (EditText) findViewById(R.id.searchInput);
-        viewHelpButton = (Button)findViewById(R.id.viewHelpButton);
+        Button viewHelpButton = (Button)findViewById(R.id.viewHelpButton);
         
         // Show the user's existing decks
         showCardsButton.setOnClickListener(new OnClickListener() {

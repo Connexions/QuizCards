@@ -111,7 +111,10 @@ public class CardListActivity extends Activity
         String selection = DECK_ID + " = '" + id + "'";
         String order = "LOWER(" + TERM + ")"; //SQLite normally orders any upper case before all lower case
         cardsCursor = getContentResolver().query(CardProvider.CONTENT_URI, projection, selection, null, order);
-        cardsCursor.moveToFirst();
+        if(cardsCursor != null)
+        {
+            cardsCursor.moveToFirst();
+        }
         
         int[] to = {R.id.term, R.id.meaning};
         String[] from = {TERM, MEANING };

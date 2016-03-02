@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/newCardActionItem" android:checkable="false" android:title="New" android:showAsAction="always" android:icon="@drawable/ic_menu_compose"></item>
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <item
+        android:id="@+id/newCardActionItem"
+        android:checkable="false"
+        android:title="New"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_menu_compose"/>
+
+
 
 </menu>

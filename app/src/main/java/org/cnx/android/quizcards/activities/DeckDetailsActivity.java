@@ -156,7 +156,10 @@ public class DeckDetailsActivity extends Activity
 		String[] projection = {BaseColumns._ID};
 		String selection = MODULE_ID + " = '" + moduleID + "'";
 		Cursor idCursor = getContentResolver().query(DeckProvider.CONTENT_URI, projection, selection, null, null);
-		idCursor.moveToFirst();
+        if(idCursor != null)
+        {
+            idCursor.moveToFirst();
+        }
 		
 		String _id = idCursor.getString(idCursor.getColumnIndex(BaseColumns._ID));
 		idCursor.close();
@@ -168,9 +171,11 @@ public class DeckDetailsActivity extends Activity
 	private void setDetails() {
         String[] projection = { TITLE, ABSTRACT, AUTHOR };
         String selection = BaseColumns._ID + " = '" + id + "'";
-        Cursor deckInfoCursor = getContentResolver().query(
-                DeckProvider.CONTENT_URI, projection, selection, null, null);
-        deckInfoCursor.moveToFirst();
+        Cursor deckInfoCursor = getContentResolver().query(DeckProvider.CONTENT_URI, projection, selection, null, null);
+        if(deckInfoCursor != null)
+        {
+            deckInfoCursor.moveToFirst();
+        }
         
         title = deckInfoCursor.getString(deckInfoCursor.getColumnIndex(TITLE));
         if(title == null || title.equals(""))

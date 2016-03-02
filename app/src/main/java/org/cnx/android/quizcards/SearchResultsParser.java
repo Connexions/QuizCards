@@ -70,7 +70,7 @@ public class SearchResultsParser {
         NodeList metadataNodes = doc.getElementsByTagName("oai_dc:dc");
         NodeList headerNodes = doc.getElementsByTagName("header");
         
-        ArrayList<String> results = new ArrayList<String>();
+        ArrayList<String> results = new ArrayList<>();
         ArrayList<SearchResult> searchResults = new ArrayList<SearchResult>();
         
         for (int i=0; i < metadataNodes.getLength(); i++) {

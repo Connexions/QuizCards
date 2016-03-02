@@ -112,9 +112,8 @@ public class QuizCardActivity extends CardActivity {
 
     @Override
     boolean checkIfValidDeck() {
-        boolean valid = definitions.size() >= 3;
+        return definitions.size() >= 3;
      
-        return valid;
     }
 
 }

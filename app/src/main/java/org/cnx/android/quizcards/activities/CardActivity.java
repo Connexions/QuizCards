@@ -41,7 +41,6 @@ public abstract class CardActivity extends Activity implements OnTouchListener
     protected String id;
 
     protected Button nextCardButton;
-    private Button prevCardButton;
 
     private TextView termText;
     protected TextView deckPositionText;
@@ -54,7 +53,7 @@ public abstract class CardActivity extends Activity implements OnTouchListener
         public boolean onSingleTapUp(MotionEvent e) {
             setMeaningText();
             return true;
-        };
+        }
 
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                 float velocityY) {
@@ -64,7 +63,7 @@ public abstract class CardActivity extends Activity implements OnTouchListener
                 prevCard();
 
             return true;
-        };
+        }
     };
 
     GestureDetector gestureDetector;
@@ -84,7 +83,7 @@ public abstract class CardActivity extends Activity implements OnTouchListener
         // Get UI elements
         termText = (TextView) findViewById(R.id.termText);
         nextCardButton = (Button) findViewById(R.id.nextCardButton);
-        prevCardButton = (Button) findViewById(R.id.prevCardButton);
+        Button prevCardButton = (Button) findViewById(R.id.prevCardButton);
         deckPositionText = (TextView) findViewById(R.id.deckPositionText);
         positionBar = (SeekBar)findViewById(R.id.deckPositionBar);
         
@@ -180,26 +179,30 @@ public abstract class CardActivity extends Activity implements OnTouchListener
         String[] columns = { TERM, MEANING };
         String selection = DECK_ID + " = '" + id + "'";
 
-        Cursor cardsCursor = getContentResolver().query(
-                CardProvider.CONTENT_URI, columns, selection, null, null);
-        cardsCursor.moveToFirst();
+        Cursor cardsCursor = getContentResolver().query(CardProvider.CONTENT_URI, columns, selection, null, null);
+        if(cardsCursor != null)
+        {
+            cardsCursor.moveToFirst();
+        }
 
-        definitions = new ArrayList<String[]>();
+        definitions = new ArrayList<>();
 
-        if (!cardsCursor.isAfterLast()) {
+        if (cardsCursor != null && !cardsCursor.isAfterLast()) {
             do {definitions.add(new String[] {
                     cardsCursor.getString(cardsCursor.getColumnIndex(TERM)),
                     cardsCursor.getString(cardsCursor.getColumnIndex(MEANING)) });
             } while (cardsCursor.moveToNext());
         }
 
-        cardsCursor.close();
+        if(cardsCursor != null)
+        {
+            cardsCursor.close();
+        }
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        boolean consumed = gestureDetector.onTouchEvent(event);
-        return consumed;
+        return gestureDetector.onTouchEvent(event);
     }
 
     // Move to the next card

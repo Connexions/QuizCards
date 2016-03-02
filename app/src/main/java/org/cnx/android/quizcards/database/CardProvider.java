@@ -29,9 +29,8 @@ public class CardProvider extends ContentProvider {
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         SQLiteDatabase cardsdb = helper.getWritableDatabase();
-        int rowsUpdated = cardsdb.delete(CARDS_TABLE, selection, null);
+        return cardsdb.delete(CARDS_TABLE, selection, null);
         
-        return rowsUpdated;
     }
 
     @Override
@@ -58,10 +57,9 @@ public class CardProvider extends ContentProvider {
 
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        Cursor c = db.query(CARDS_TABLE, projection, selection, selectionArgs,
+        return db.query(CARDS_TABLE, projection, selection, selectionArgs,
                 null, null, sortOrder);
 
-        return c;
     }
 
     @Override
@@ -69,9 +67,8 @@ public class CardProvider extends ContentProvider {
             String[] selectionArgs) {
         
         SQLiteDatabase cardsdb = helper.getWritableDatabase();
-        int rowsUpdated = cardsdb.update(CARDS_TABLE, values, selection, selectionArgs);
+        return cardsdb.update(CARDS_TABLE, values, selection, selectionArgs);
         
-        return rowsUpdated;
     }
 
 }
