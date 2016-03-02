@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/editDeckActionItem"
         android:title="Edit"
-        app:showAsAction="always"
+        android:showAsAction="always"
         android:icon="@drawable/ic_menu_edit"
         android:titleCondensed="Edit"/>
 
     <item
         android:id="@+id/deleteDeckActionItem"
         android:title="Delete"
-        app:showAsAction="ifRoom"
+        android:showAsAction="never"
         android:icon="@drawable/ic_menu_delete"/>
 
 
